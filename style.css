@@ -1,0 +1,411 @@
+@font-face {
+  font-family: "contentFont";
+  src: url(./assets/fonts/Rubik/Rubik-VariableFont_wght.ttf)
+    format("woff2-variations");
+  font-weight: 300 500;
+  font-style: normal;
+}
+
+:root {
+  /* ### Primary */
+
+  --Purple600: hsl(246, 80%, 60%);
+
+  --Orange300work: hsl(15, 100%, 70%);
+  --Blue300play: hsl(195, 74%, 62%);
+  --Pink400study: hsl(348, 100%, 68%);
+  --Green400exercise: hsl(145, 58%, 55%);
+  --Purple700social: hsl(264, 64%, 52%);
+  --Yellow300selfcare: hsl(43, 84%, 65%);
+  /* ### Neutral */
+
+  --Navy950: hsl(226, 43%, 10%);
+  --Navy900: hsl(235, 46%, 20%);
+  --Navy800: hsl(235, 41%, 34%);
+  --Purple500: hsl(235, 45%, 61%);
+  --Purple600: hsl(246, 80%, 60%);
+  --Navy200: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "contentFont";
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 56px;
+  line-height: 66px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 47px;
+  color: white;
+}
+
+.content-title > p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+#name,
+.content-date > p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--Navy200);
+}
+
+#container {
+  color: white;
+  background-color: var(--Navy950);
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+#card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "info work play study"
+    "info exercise social care";
+  gap: 2rem 2rem;
+}
+
+#info {
+  width: 255;
+  height: 520;
+}
+
+#work,
+#exercise,
+#study,
+#play,
+#social,
+#self-care {
+  width: 255px;
+  height: 244px;
+}
+
+#info {
+  grid-area: info;
+}
+
+#work {
+  grid-area: work;
+}
+
+#exercise {
+  grid-area: exercise;
+}
+
+#study {
+  grid-area: study;
+}
+
+#play {
+  grid-area: play;
+}
+
+#social {
+  grid-area: social;
+}
+
+#self-care {
+  grid-area: care;
+}
+
+#info-content {
+  width: 100%;
+  height: 100%;
+  background-color: var(--Navy900);
+  border-radius: 15px;
+  position: relative;
+}
+
+#people {
+  width: 255px;
+  height: 354px;
+  position: absolute;
+  bottom: 166px;
+  background-color: var(--Purple500);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+#people:hover {
+  background-color: var(--Purple600);
+}
+
+#people-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#people-content img {
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+#date {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+#date p:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.date-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--Purple500);
+}
+
+.active {
+  color: white;
+}
+
+.content-backgroud {
+  position: relative;
+  width: 255px;
+  height: 160px;
+  border-radius: 15px;
+}
+
+.content-backgroud > svg {
+  position: absolute;
+  top: -10.91px;
+  left: 159.58px;
+}
+
+.content {
+  position: absolute;
+  width: 255px;
+  height: 199px;
+  background-color: var(--Navy900);
+  top: 2.8125rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 15px;
+}
+
+.content:hover {
+  background-color: var(--Navy800);
+}
+
+.content-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-backgroud {
+  background-color: var(--Orange300work);
+}
+
+.exercise-backgroud {
+  background-color: var(--Green400exercise);
+}
+
+.play-backgroud {
+  background-color: var(--Blue300play);
+}
+
+.social-backgroud {
+  background-color: var(--Purple700social);
+}
+
+.study-backgroud {
+  background-color: var(--Pink400study);
+}
+
+.self-care-backgroud {
+  background-color: var(--Yellow300selfcare);
+}
+
+@media (max-width: 810px) {
+  #card {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "info info info"
+      "work play study"
+      "exercise social care";
+    gap: 24px;
+  }
+
+  #info-content {
+    width: 612px;
+    height: 203px;
+    position: relative;
+  }
+
+  #people {
+    width: 100%;
+    height: 133px;
+    bottom: 70px;
+    background-color: var(--Purple500);
+    padding: 2rem;
+    border-radius: 15px;
+  }
+
+  #people-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .content-backgroud > svg {
+    top: -8.04px;
+    left: 116.6px;
+  }
+
+  #info {
+    width: 612px;
+    height: 203px;
+  }
+
+  #work,
+  #exercise,
+  #study,
+  #play,
+  #social,
+  #self-care {
+    width: 188px;
+    height: 213px;
+  }
+
+  #date {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .content-backgroud {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    width: 100%;
+    height: 180px;
+    padding: 24px;
+    top: 38px;
+  }
+}
+
+@media (max-width: 400px) {
+  #container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 81px 24px 81px 24px;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  #card {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "info"
+      "work"
+      "play"
+      "study"
+      "exercise"
+      "social"
+      "care";
+    gap: 24px;
+  }
+
+  #info {
+    width: 100%;
+  }
+
+  #info-content {
+    width: 100%;
+    height: 203px;
+    position: relative;
+  }
+
+  #people {
+    width: 100%;
+    height: 133px;
+    bottom: 70px;
+    background-color: var(--Purple500);
+    padding: 2rem;
+    border-radius: 15px;
+  }
+
+  #people-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .content-backgroud > svg {
+    top: -10.61px;
+    left: 231.58px;
+  }
+
+  /* 
+  #work,
+  #exercise,
+  #study,
+  #play,
+  #social,
+  #self-care {
+    width: 100%;
+    height: 160px;
+  } */
+
+  #work {
+    width: 100%;
+    height: 160px;
+  }
+
+  .content-backgroud {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    width: 100%;
+    height: 122px;
+    padding: 27.5px 24px 27.5px 24px;
+    gap: 0.5rem;
+  }
+
+  .content-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
